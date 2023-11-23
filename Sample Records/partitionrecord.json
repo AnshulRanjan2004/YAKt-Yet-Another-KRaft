@@ -1,0 +1,35 @@
+{
+    "type": "metadata",
+    "name": "PartitionRecord",
+    "fields": {
+        "partitionId": 1,
+        "topicUUID": "123456789",
+        "replicas": [1, 2, 3],
+        "ISR": [1, 2],
+        "removingReplicas": [],
+        "addingReplicas": [],
+        "leader": "1",
+        "partitionEpoch": 1
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+{
+    "type": "metadata",
+    "name": "PartitionRecord",
+    "fields": {
+        "partitionId": 1,
+        "addingReplicas": 4
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+{
+    "type": "metadata",
+    "name": "PartitionRecord",
+    "fields": {
+        "partitionId": 1,
+        "removingReplicas": 3
+    },
+    "timestamp": "{{timestamp}}"
+}

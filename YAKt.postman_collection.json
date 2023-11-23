@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "0b808a37-ffa2-4bc5-9a42-aa259daba37b",
+		"name": "YAKt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28044173"
+	},
+	"item": [
+		{
+			"name": "Register Broker",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"metadata\",\n    \"name\": \"RegisterBrokerRecord\",\n    \"fields\": {\n        \"internalUUID\": \"\",\n        \"brokerId\": 1,\n        \"brokerHost\": \"ccbd.com\",\n        \"brokerPort\": \"9092\",\n        \"securityProtocol\": \"SSL\",\n        \"brokerStatus\": \"\",\n        \"rackId\": \"rack-1\",\n        \"epoch\": 0\n    },\n    \"timestamp\": \"{{timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/register_broker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"register_broker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Active Broker IDs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5012/get_active_brokers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"get_active_brokers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Broker by ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"internalUUID\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/get_broker_by_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"get_broker_by_id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Topic",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"metadata\",\n    \"name\": \"TopicRecord\",\n    \"fields\": {\n        \"topicUUID\": \"\", \n        \"name\": \"Likes\"\n    },\n    \"timestamp\": \"{{timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/create_topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"create_topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Topic By Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"topic_name\": \"Likes\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/get_topic_by_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"get_topic_by_name"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Partition",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"metadata\",\n    \"name\": \"PartitionRecord\",\n    \"fields\": {\n        \"partitionId\": 1,\n        \"topicUUID\": \"123456789\",\n        \"replicas\": [1, 2, 3],\n        \"ISR\": [1, 2],\n        \"removingReplicas\": [],\n        \"addingReplicas\": [],\n        \"leader\": \"1\",\n        \"partitionEpoch\": 1\n    },\n    \"timestamp\": \"{{timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/create_partition",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"create_partition"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adding Replica to Partition",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"metadata\",\n    \"name\": \"PartitionRecord\",\n    \"fields\": {\n        \"partitionId\": 1,\n        \"addingReplicas\": 4\n    },\n    \"timestamp\": \"{{timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/add_replica",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"add_replica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removing Replica from Partition",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"metadata\",\n    \"name\": \"PartitionRecord\",\n    \"fields\": {\n        \"partitionId\": 1,\n        \"removingReplicas\": 3\n    },\n    \"timestamp\": \"{{timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/remove_replica",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"remove_replica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Producer",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"metadata\",\n    \"name\": \"ProducerIdsRecord\",\n    \"fields\": {\n        \"brokerId\": \"\",\n        \"brokerEpoch\": 0,\n        \"producerId\": 1\n    },\n    \"timestamp\": \"{{timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/record_producer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"record_producer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change a Broker Record",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"metadata\",\n    \"name\": \"RegistrationChangeBrokerRecord\",\n    \"fields\": {\n        \"brokerId\": \"\",\n        \"brokerHost\": \"CCBD.com\",\n        \"brokerPort\": \"9092\",\n        \"securityProtocol\": \"SSL\",\n        \"brokerStatus\": \"ALIVE\",\n        \"epoch\": 0\n    },\n    \"timestamp\": \"{{timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/register_broker_change",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"register_broker_change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unregister Broker",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brokerId\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/unregister_broker",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"unregister_broker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Broker Management",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"timestamp\": \"{{$timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/broker_mgmt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"broker_mgmt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Client Management",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentTimestamp = Math.floor(Date.now() / 1000);",
+							"",
+							"pm.variables.set(\"timestamp\", currentTimestamp);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"timestamp\": \"{{$timestamp}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5012/client_mgmt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5012",
+					"path": [
+						"client_mgmt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

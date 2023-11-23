@@ -1,0 +1,47 @@
+{
+    "type": "metadata",
+    "name": "RegisterBrokerRecord",
+    "fields": {
+        "internalUUID": "",
+        "brokerId": 1,
+        "brokerHost": "ccbd.com",
+        "brokerPort": "9092",
+        "securityProtocol": "SSL",
+        "brokerStatus": "",
+        "rackId": "rack-1",
+        "epoch": 0
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+{
+    "type": "metadata",
+    "name": "RegisterBrokerRecord",
+    "fields": {
+        "internalUUID": "",
+        "brokerId": 2,
+        "brokerHost": "ccbd.com",
+        "brokerPort": "9092",
+        "securityProtocol": "SSL",
+        "brokerStatus": "",
+        "rackId": "rack-1",
+        "epoch": 0
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+{
+    "type": "metadata",
+    "name": "RegisterBrokerRecord",
+    "fields": {
+        "internalUUID": "",
+        "brokerId": 3,
+        "brokerHost": "ccbd.com",
+        "brokerPort": "9092",
+        "securityProtocol": "SSL",
+        "brokerStatus": "",
+        "rackId": "rack-1",
+        "epoch": 0
+    },
+    "timestamp": "{{timestamp}}"
+}

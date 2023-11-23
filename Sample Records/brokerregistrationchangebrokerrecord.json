@@ -1,0 +1,32 @@
+{
+    "type": "metadata",
+    "name": "RegistrationChangeBrokerRecord",
+    "fields": {
+        "brokerId": "",
+        "brokerHost": "CCBD.com",
+        "brokerPort": "9092",
+        "securityProtocol": "SSL",
+        "brokerStatus": "ALIVE",
+        "epoch": 0
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+
+
+
+{
+    "type": "metadata",
+    "name": "RegistrationChangeBrokerRecord",
+    "fields": {
+        "brokerId": "thanksforBD",
+        "brokerHost": "CCBD.com",
+        "brokerPort": "9093",
+        "securityProtocol": "SSL",
+        "brokerStatus": "ALIVE",
+        "epoch": 0
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+

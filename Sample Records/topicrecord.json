@@ -1,0 +1,29 @@
+{
+    "type": "metadata",
+    "name": "TopicRecord",
+    "fields": {
+        "topicUUID": "", 
+        "name": "Likes"
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+{
+    "type": "metadata",
+    "name": "TopicRecord",
+    "fields": {
+        "topicUUID": "", 
+        "name": "Comments"
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+{
+    "type": "metadata",
+    "name": "TopicRecord",
+    "fields": {
+        "topicUUID": "", 
+        "name": "Shares"
+    },
+    "timestamp": "{{timestamp}}"
+}

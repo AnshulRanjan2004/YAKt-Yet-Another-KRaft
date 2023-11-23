@@ -1,0 +1,32 @@
+{
+    "type": "metadata",
+    "name": "ProducerIdsRecord",
+    "fields": {
+        "brokerId": "",
+        "brokerEpoch": 0,
+        "producerId": 1
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+{
+    "type": "metadata",
+    "name": "ProducerIdsRecord",
+    "fields": {
+        "brokerId": "",
+        "brokerEpoch": 0,
+        "producerId": 2
+    },
+    "timestamp": "{{timestamp}}"
+}
+
+{
+    "type": "metadata",
+    "name": "ProducerIdsRecord",
+    "fields": {
+        "brokerId": "",
+        "brokerEpoch": 0,
+        "producerId": 3
+    },
+    "timestamp": "{{timestamp}}"
+}
